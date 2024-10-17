@@ -1,0 +1,432 @@
+/* 清除内外边距 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+* {
+    box-sizing: inherit;
+}
+
+/* 颜色设置，全局变量 */
+:root {
+    /* 这里对白色进行了修改，原有的白色太亮了 */
+    --main-white: #fdd1d0;
+    --main-red: #be3144;
+    --main-blue: #45567d;
+    --main-gray: #303841;
+}
+
+
+
+html {
+    /* 设置平滑滚动效果 */
+    scroll-behavior: smooth;
+    /* 边框 */
+    box-sizing: border-box;
+
+}
+
+body {
+    /* 基础字体大小 */
+    /* 100% 即 16px，故 10px 为 62.5% （10x100%/16）*/
+    font-size: 62.5%;
+    /* 设置鼠标样式，如果鼠标样式图片太多了，
+            是无法生效的 */
+    cursor: url(image/Mouse.png), default;
+
+}
+
+/* 屏幕宽度小于460px时 */
+@media (max-width: 460px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+/*  屏幕宽度小于600px时*/
+@media (max-width: 600px) {
+    body {
+        font-size: 80%;
+    }
+}
+
+/* 屏幕宽度小于980px时 */
+@media (max-width: 980px) {
+    html {
+        font-size: 100%;
+    }
+}
+
+
+/* 当屏幕宽度大于1200px时 */
+@media(min-width: 1200px) {
+    body {
+        font-size: 120%;
+    }
+}
+
+/* 在 CSS 中使用自定义光标 */
+/* body {
+    cursor: url('path/to/your-cursor-image.png'), auto;
+} */
+
+/* 对导航栏进行样式设置 */
+header nav {
+    /* 固定定位 */
+    position: fixed;
+    /* 对脱离文档流元素需要设置宽度
+    否则默认宽度就是元素内容宽度 */
+    width: 100%;
+    /* 设置为弹性盒子 */
+    display: flex;
+
+    /* 背景颜色，使用前面设置的全局变量 */
+    background-color: var(--main-red);
+    /* 调整位置 从尾向前 */
+    justify-content: flex-end;
+    height: 50px;
+    /* 用z-index来调整堆叠顺序确保:hover效果会生效 */
+    z-index: 10;
+}
+
+/* 屏幕宽度小于460px，即智能手机的屏幕宽度时，导航链接从右对齐改为居中对齐 */
+@media (max-width:460px) {
+    header nav {
+        justify-content: center;
+    }
+}
+
+/* 对链接进行样式设置 */
+header nav a {
+
+    /* 去除链接下划线 */
+    text-decoration: none;
+    color: var(--main-white);
+    /* 设置左右内边距，来扩大文字所占的宽度
+    因为后面悬浮的时候，文字左右两边的间隙样式也发生了变化 
+    行内元素是可以设置左右内外边距的 */
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    /* 文字竖直居中 */
+    line-height: 50px;
+}
+
+/* 链接悬浮样式设置 */
+header nav a:hover {
+    background-color: var(--main-blue);
+}
+
+/* 设置h1名字样式 */
+.about-me h1 {
+    font-size: 7vh;
+    color: var(--main-white);
+    text-align: center;
+}
+
+.about-me h3 {
+    /* 取消加粗 */
+    font-weight: normal;
+    font-size: 4vh;
+    font-style: italic;
+    color: var(--main-red);
+}
+
+/* 设置个人信息样式 */
+main .about-me {
+    /* margin: 0;
+    padding: 0; */
+    /* 设置背景颜色 */
+    background-color: var(--main-gray);
+    /* 设置宽和高，能根据视口宽度和高度自适应调整 */
+    position: relative;
+    /* 弹性布局 */
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+
+    /* 视口垂直居中 */
+    align-items: center;
+    /* 视口水平居中 */
+    justify-content: center;
+
+}
+
+/* 设置个人信息文字部分的样式 */
+main .about-me .message {
+    /* 设置外边距 
+    20vw表示视口宽度的20%
+    这样就能根据屏幕的的宽度vw自适应调整
+    视口高度是vh*/
+    /* 设置右外边距 */
+    margin-right: 10vw;
+    margin-bottom: 5vh;
+}
+
+/* 设置图片样式 */
+main .about-me .my-image img {
+    /* 裁剪圆形区域 */
+    clip-path: circle(50% at center);
+    /* 调整图片宽度和高度，以便裁剪区域能显示
+    想要的区域 */
+    width: 35vh;
+    height: 35vh;
+    /* transform: translate(-50% -50%); */
+    /* 设置图片变化过渡效果 */
+    transition: transform 2s ease-in-out;
+    cursor: pointer;
+}
+
+/* 当屏幕宽度小于460px，姓名和照片竖着排体验更好， */
+@media (max-width: 460px) {
+    .about-me {
+        flex-direction: column;
+    }
+}
+
+/* 鼠标悬浮 个人信息图片样式变化 */
+.my-image img:hover {
+    transform: scale(1.5);
+}
+
+/* 项目栏设置 */
+.project {
+
+    background-color: var(--main-blue);
+    /* 设置下内边距 */
+    padding-bottom: 10vh;
+
+    ;
+}
+
+/* 设置项目文字样式 */
+.project h1 {
+    /* 颜色 */
+    color: var(--main-white);
+    /* 字体大小 */
+    font-size: 4vh;
+    /* 水平居中 */
+    text-align: center;
+    /* 设置上外边距 */
+    padding-top: 10vw;
+}
+
+/* 直线设置 */
+.project hr {
+    /* 宽度 */
+    width: 28vh;
+    /* 居中 */
+    margin: auto;
+}
+
+/* 项目图片布局 */
+.my-project {
+    /* 网格布局 */
+    display: grid;
+    /* 列的宽度为320px~1fr，根据容器宽度计算列数 */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 5vw;
+    margin: 5vh 10vw;
+}
+
+/* 当屏幕宽度小于460px，网格的只有1个列，即一行只显示一个项目 */
+@media (max-width: 460px) {
+    .my-project {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* 设置每个项目的上间距 */
+.project .my-project .img {
+    margin-top: 8.5vh;
+    /* 设置字体行高为0的目的是清除盒子之间的上下间隙
+    因为某些元素具有默认的行高，这可能会导致上下间隙 */
+    line-height: 0;
+    /* 设置效果变化过渡效果 */
+    transition: transform 1.5s ease-in-out;
+}
+
+/* 项目图片大小设置 */
+.project .my-project img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 需要解决的问题：
+1. 当视口大小发生变化时，图片的文字描述
+无法正常垂直居中，这应该和设置的上外边距
+相关
+2.CSS中的选择器的使用得优化一下，太繁琐，太多了
+2.要建一个笔记用来记录前端综合案例的学习
+来帮助自己理清所需和所学的知识点已经思路
+3.找web前端练习网站，来学习和练习相关知识点 
+4.相关知识点的笔记要整理好、总结好放到笔记中去
+不要写在项目代码中
+*/
+
+.project .my-project .img .mes {
+    /* 设置为弹性布局，方便居中设置 */
+    display: flex;
+    /* 设置文本框的宽高 */
+    width: 100%;
+    height: 10%;
+    /* 背景颜色 */
+    background-color: var(--main-gray);
+    /* 使用 Flexbox 垂直居中 */
+    align-items: center;
+    /* 使用 Flexbox 水平居中 */
+    justify-content: center;
+    /* margin-top: -5%; */
+    /* 字体颜色 */
+    color: var(--main-white);
+}
+
+/* 文字左右括号 */
+.project .my-project .img .mes span {
+    color: var(--main-gray);
+}
+
+.project .my-project .img .mes:hover>span {
+    color: var(--main-red);
+}
+
+/* 设置全部项目样式 */
+.all-project {
+    /* 设置弹性布局，让子元素横向布局 */
+    display: flex;
+    position: relative;
+    width: 8em;
+    height: 3em;
+    background-color: var(--main-gray);
+    color: var(--main-white);
+    /* 盒子水平居中 */
+    margin: auto;
+    margin-top: 15vh;
+
+}
+
+
+.all-project .mes {
+    position: relative;
+    /* 居中 */
+    margin: auto;
+}
+
+
+/* 小三角形 */
+.all-project .triangle {
+    /* 做小三角形    */
+    width: 0px;
+    height: 0px;
+    border-top: .5em solid transparent;
+    border-bottom: .5em solid transparent;
+    border-left: .5em solid var(--main-white);
+    /* 居中 
+    父元素为弹性布局，子元素使用margin:atuo;
+    可以实现水平和竖直居中*/
+    margin: auto;
+    /* 设置左外边距 */
+    margin-left: -.5vw;
+    /* 设置过渡效果 */
+    transition: transform 0.5s ease-in-out;
+
+}
+
+/* 全部项目悬浮效果设置 */
+.all-project:hover {
+    background-color: var(--main-red);
+}
+
+/* “全部项目"悬浮时，子元素三角形样式变化设置
+用'>'或者空格 */
+.all-project:hover>.triangle {
+    transform: translateX(.3em);
+}
+
+/* 联系方式栏设置 */
+.connect {
+    height: 60vh;
+    background-color: var(--main-gray);
+    /* 字体颜色都为白色 */
+    color: var(--main-white);
+    /* 盒子居中 */
+    text-align: center;
+}
+
+/* 联系栏标题 */
+.connect .mes h1 {
+    font-size: 5vh;
+    padding-top: 10vh;
+}
+
+/* 联系栏提示文字 */
+.connect .mes p {
+    /* 斜体设置 */
+    font-style: italic;
+}
+
+.coonnect .image {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 联系方式盒子样式设置 */
+.connect .image div {
+    /* 块转行内块，一行显示 */
+    display: inline-block;
+    /* 文字居中 */
+    text-align: center;
+    /* 设置间距 */
+    margin-left: 2vw;
+    margin-bottom: 10vh;
+
+}
+
+
+/* 标题与图片的间距 */
+.connect .mes {
+    margin-bottom: 5vh;
+}
+
+
+
+.connect .image div {
+    /* 设置过渡效果 */
+    transition: transform 1s ease-in-out;
+
+    margin: 1vh;
+
+}
+
+/* 联系方式图片样式设置 */
+.connect .image div img {
+
+    width: 10vh;
+}
+
+/* 设置联系（图片+文字）悬浮样式 */
+.connect .image div:hover {
+    transform: translateY(2vh);
+}
+
+/* 页脚页面设置 */
+footer {
+    /* 设置上边框 */
+    border-top: 1vh solid var(--main-red);
+    /* 高度设置 */
+    height: 15vh;
+    background-color: var(--main-blue);
+    /* 文字颜色 */
+    color: #8194af;
+    /* 水平居中 */
+    text-align: center;
+    /* 竖直居中 */
+    line-height: 15vh;
+}
+
+/* 页脚文字设置 */
+footer span {
+    font-style: italic;
+}

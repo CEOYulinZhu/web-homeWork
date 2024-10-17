@@ -1,0 +1,176 @@
+body {
+    height: 1000px;
+}
+
+/* header 盒子的样式设置 */
+header {
+    /* 高度 宽度默认为页面宽度 */
+    height: 70px;
+    /* 设置背景颜色 */
+    background-color: yellow;
+
+    /* 水平居中 */
+    text-align: center;
+    /* 竖直居中:
+    通过设置行高与盒子的高度一致，即可实现文本竖直居中
+    */
+    line-height: 70px;
+}
+
+/* 对nav盒子进行样式设置 */
+nav {
+    /* 定位方式 */
+    position: sticky;
+    z-index: 3;
+    /* 设置高度 */
+    height: 60px;
+    /* 设置背景颜色 */
+    background-color: rgb(128, 128, 128);
+    /* 设置文字颜色 */
+    color: aliceblue;
+    /* 设置行高 */
+    line-height: 1em;
+    /* 设置粘性定位，固定的位置 */
+    top: 0;
+}
+
+nav span {
+    /* 设置行高 让内容距离顶部有一定的距离 */
+    line-height: 2em;
+}
+
+nav ul {
+
+    /* 去除无序列表前面自带的点 */
+    list-style: none;
+    /* 设置文本缩进，让内容对齐 */
+    text-indent: -2em;
+    /* 设置行高 */
+    line-height: 0.1em;
+}
+
+/* 对nav ul进行样式设置 */
+nav ul li {
+    /* 转化为行内元素 */
+    display: inline;
+
+
+}
+
+/* 对链接文本a（nav的后代）进行样式设置 */
+nav a {
+    /* 去除下划线 */
+    /* text-decoration: none; */
+    /* 设置字体颜色 */
+    color: aliceblue;
+}
+
+/* 对main进行样式设置 */
+main {
+    /* 父元素main相对定位 */
+    position: relative;
+    /* 设置盒子宽度 高度*/
+    width: 650px;
+    height: 600px;
+    /* 设置盒子边框 */
+    border-width: 3px;
+    /* 设置边框样式 solid表示直线 */
+    border-style: solid;
+    border-style: dashed;
+    /* 设置边框颜色 */
+    border-color: pink;
+    /* 相对定位实现居中的方式 */
+    margin: auto;
+
+}
+
+/* 将"我要绝对定位"放到到边框线条中 */
+.woyaojueduidingwei {
+    position: absolute;
+    height: 32px;
+    width: 96px;
+    background-color: rgb(228, 167, 64);
+    left: 505px;
+    top: -10px;
+    /* 文本竖直居中 */
+    line-height: 32px;
+    border-radius: 10px;
+}
+
+/* 对main article1进行样式设置 */
+main .article1 {
+    top: 30px;
+    /* 绝对定位 */
+    position: absolute;
+    /* 设置宽度 高度*/
+    width: 600px;
+    /* 设置边框宽度 */
+    border-width: 2px;
+    /* 设置边框样式，这个一定要设置，不设置的话边框就不会显示 */
+    border-style: solid;
+    border-color: burlywood;
+
+    /* 绝对定位实现 水平居中 */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 对main article2进行样式设置 */
+main .article2 {
+    top: 250px;
+    position: absolute;
+    /* 设置宽度 高度*/
+    width: 600px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: burlywood;
+
+    /* 居中 */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 设置Article标题与上下文的间距 */
+h2 {
+    line-height: 0.05em;
+}
+
+/* 设置 aside左样式 */
+.left {
+    /* 固定定位 */
+    position: fixed;
+    /* 设置边框 */
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(165, 204, 79);
+    /* 盒子宽度 */
+    height: 100px;
+}
+
+/* 设置 aside 右样式 */
+.right {
+    /* 固定定位 */
+    position: fixed;
+    right: 10px;
+    /* 设置边框 */
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(165, 204, 79);
+    /* 盒子宽度 */
+    height: 100px;
+}
+
+/* 设置页脚 footer样式 */
+footer {
+    /* 相对定位，常规流 */
+    /* position: relative; */
+
+    /* 盒子高度 */
+    height: 100px;
+    /* 颜色 */
+    background-color: yellow;
+    /* 水平居中 */
+    text-align: center;
+    /* 竖直居中 */
+    line-height: 100px;
+}

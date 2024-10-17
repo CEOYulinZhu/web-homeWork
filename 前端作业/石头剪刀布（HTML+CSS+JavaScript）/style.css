@@ -1,0 +1,297 @@
+body {
+    background-color: #1a2749;
+    font-size: 16px;
+}
+
+.head {
+    width: 20%;
+    /* 设置边框样式 */
+    border: 3px solid #586b84;
+    /* 圆角边框 */
+    border-radius: 5px;
+    color: white;
+    /* 相对定位 */
+    position: relative;
+    /* 相对定位水平居中 */
+    margin: auto;
+    top: 20vh;
+    padding-left: 1em;
+    padding-right: 1em;
+    /* 弹性布局，让子元素横向排列 */
+    display: flex;
+    /* 子元素水平居中 */
+    justify-content: center;
+    /* 子元素竖直居中 */
+    align-items: center;
+
+    /* message样式设置 */
+    .message {
+        font-size: 1.25em;
+        font-weight: bold;
+        line-height: .5em;
+        margin-right: 6em;
+    }
+
+    /* score样式设置 */
+    .score {
+        /* 设置弹性布局，方便子元素居中设置 */
+        display: flex;
+        /* 子元素水平居中设置 */
+        justify-content: center;
+        /* 子元素垂直居中设置 */
+        align-items: center;
+        /* 宽度设置 */
+        width: 30%;
+        /* 水平居中 */
+        background-color: white;
+        border-radius: 5%;
+
+        .box2 {
+            line-height: .1em;
+        }
+
+        /* prompt样式设置 */
+        .prompt {
+            color: blue;
+        }
+
+        /* number样式设置 */
+        .number {
+            color: black;
+            font-size: 2em;
+            text-align: center;
+            font-weight:bold;
+        }
+
+    }
+}
+
+/* triangle样式设置 */
+.triangle {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    /* 设置弹性布局，让其子元素布局更加方便 */
+    display: flex;
+    /* 一行放不下自动换行 */
+    flex-wrap: wrap;
+    /* 背景图片样式 */
+    background: url(image/triangle.svg);
+    background-repeat: no-repeat;
+    /* 背景图片大小尺寸 */
+    background-size: 60% 60%;
+    /* 背景图片在盒子中居中 */
+    background-position: center center;
+    /* 盒子在网页中水平居中 */
+    margin: auto;
+    margin-top: 30vh;
+
+    .border-style {
+        /* 弹性布局 */
+        display: flex;
+        /* 子元素水平和竖直居中 */
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        /* 盒子大小 */
+        width: 100px;
+        height: 100px;
+        /* 边框设置 */
+        /* 圆形 */
+        border-radius: 50%;
+        /* 边框线条，必须设置 */
+        border-style: solid;
+        border-width: 25px;
+        background-color: white;
+        /* 阴影效果设置 */
+        box-shadow: inset 0px 4px 2px rgba(0, 0, 0, 0.3);
+        /* 修改鼠标样式 */
+        cursor: pointer;
+    }
+
+    .rock {
+        margin-left: 20px;
+        border-color: #5570f5;
+        margin-right: 65px;
+
+    }
+
+    .scissors {
+        border-color: #eb9f0b;
+    }
+
+    .paper {
+        border-color: #d93955;
+        /* 水平居中 */
+        margin: auto;
+        margin-top: 15px;
+    }
+}
+
+
+.showModalBtn {
+    /* 盒子位置 */
+    position: fixed;
+    right: 1vw;
+    bottom: 10vh;
+    /* 边框设置 */
+    border: 1px solid #ccc;
+    color: white;
+    /* 盒子宽高设置 */
+    height: 2em;
+    width: 6em;
+    /* 文字水平居中 */
+    text-align: center;
+    /* 文字竖直居中 */
+    line-height: 2em;
+    /* 更改鼠标样式 */
+    cursor: pointer;
+}
+
+
+/* 游戏规则页样式设置 */
+.modal {
+    /* 盒子大小设置 */
+    width: 350px;
+    height: 350px;
+
+    display: none;
+    position: fixed;
+
+    /* 设置边框样式 */
+    border: 3px solid black;
+    /* 圆角 */
+    border-radius: 10px;
+    /* 视口居中 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 背景颜色 */
+    background-color: #fff;
+    /* 内边距 */
+    /* padding: .5em; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+
+    /* 提示文字居中 */
+    h2 {
+        text-align: center;
+    }
+
+    .rule-image {
+        text-align: center;
+    }
+}
+
+/* 用于模态框和背景 */
+.modal-backdrop {
+    display: none;
+    /* 背景默认隐藏 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 半透明黑色背景 */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 设置层级为最高，覆盖其他元素 */
+    z-index: 999;
+}
+
+/* 当模态框和背景有active类时显示 */
+.modal.active,
+.modal-backdrop.active {
+    display: block;
+
+}
+
+/* 关闭按钮样式设置 */
+
+.close {
+    font-size: 2em;
+    position: absolute;
+    top: -5px;
+    right: 8px;
+    /* 鼠标悬停时显示手型光标 */
+    cursor: pointer;
+    /* 字体颜色设置为灰色 */
+    color: #ccc;
+}
+
+/* 鼠标悬浮样式设置 */
+.border-style:hover {
+    filter: drop-shadow(0px 0px 10px white);
+}
+
+/* 游戏进行页面 */
+.game {
+    /* 隐藏 */
+    display: none;
+    position: fixed;
+    /* 居中 */
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 背景颜色这个用于测试的，方便显示区域 */
+    /* background-color: #d93955; */
+    /* 子元素居中 */
+    justify-content: center;
+    align-items: center;
+    /* 文字都是白色 */
+    color: white;
+
+    .player {
+        /* 背景颜色这个用于测试的，方便显示区域 */
+        /* background-color: #eb9f0b; */
+
+        p {
+            margin-bottom:45px;
+            font-weight: bold;
+            text-align: center;
+
+        }
+
+        .image {
+            margin-top: 20%;
+            /* 背景颜色这个用于测试的，方便显示区域 */
+            /* background-color: black; */
+            /* 设置弹性布局，方便子元素居中（子元素是通过js克隆进来的） */
+            display: flex;
+            /* 水平居中 */
+            justify-content: center;
+
+        }
+    }
+
+    /* 输赢提示文字 */
+    .title {
+        /* 背景颜色这个用于测试的，方便显示区域 */
+        /* background-color: #586b84; */
+        /* 设置外边距 */
+        margin-left: 3em;
+        margin-right: 3em;
+        margin-top: 3em;
+        h1 {
+            text-align: center;
+        }
+
+        .again {
+            width: 7em;
+            height: 2.5em;
+            color: black;
+            /* 文本水平居中 */
+            text-align: center;
+            /* 文本竖直居中 */
+            line-height: 2.5em;
+            background-color: white;
+            border-radius: 3px;
+            /* div元素水平居中 */
+            margin: auto;
+            /* 修改鼠标样式 */
+            cursor: pointer;
+            /* 文字粗细 */
+            font-weight:bold;
+        }
+    }
+
+}

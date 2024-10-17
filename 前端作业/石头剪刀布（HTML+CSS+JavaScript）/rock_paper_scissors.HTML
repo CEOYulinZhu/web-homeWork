@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>石头剪刀布</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- 头部块 -->
+    <div class="head">
+        <div class="message">
+            <p>石头</p>
+            <p>剪刀</p>
+            <p>布</p>
+        </div>
+        <div class="score">
+            <div class="box2">
+                <p class="prompt">总得分</p>
+                <p class="number">0</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 选择区域 -->
+    <div class="triangle">
+        <!-- 石头 -->
+        <div class="rock border-style">
+            <img src="image/rock.svg" alt="">
+        </div>
+
+        <!-- 剪刀 -->
+        <div class="scissors border-style">
+            <img src="image/scissors.svg" alt="">
+        </div>
+        <!-- 布 -->
+        <div class="paper border-style">
+            <img src="image/paper.svg" alt>
+        </div>
+    </div>
+
+    <!-- 游戏规则 -->
+    <div class="showModalBtn" id="showModalBtn">
+        游戏规则
+    </div>
+
+    <!-- 点击游戏规则后显示的内容 -->
+    <div class="modal" id="gameRulesModal">
+        <!-- 关闭按钮 -->
+        <span class="close">×</span>
+        <h2>游戏规则</h2>
+        <div class="rule-image">
+            <img src="image/rules.svg" alt="">
+        </div>
+    </div>
+
+     <div class="modal-backdrop" id="modalBackdrop"></div>
+    <!-- 游戏进行页 -->
+    <div class="game">
+        <!-- 玩家的选择 -->
+        <div class="player">
+            <p>
+                您的选择
+            </p>
+            <div class="image" id="iamge">
+                <!-- 这里由js插入div -->
+            </div>
+        </div>
+        <div class="title">
+            <h1>（输赢提示）</h1>
+            <div class="again">
+                再来一局
+            </div>
+        </div>
+        <!-- 电脑的选择 -->
+        <!-- 电脑的样式和玩家样式是一样的 -->
+        <div class="computer player">
+            <p>
+                电脑的选择
+            </p>
+            <div class="image" id="computer-iamge">
+               <!-- 这里由js插入div -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入js -->
+    <script src="rock_paper_scissors.js"></script>
+</body>
+
+</html>

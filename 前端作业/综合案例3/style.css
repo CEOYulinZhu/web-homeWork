@@ -1,0 +1,160 @@
+body {
+    /* 背景图片的相关设置 */
+    background-image:
+        linear-gradient(115deg, rgba(58, 58, 158, 0.8), rgba(136, 136, 206, 0.7)),
+        url(https://labfile.oss.aliyuncs.com/courses/10535/form-background.jpeg);
+    /* 背景图片固定，不跟随页面滚动 */
+    background-attachment: fixed;
+    /* 背景图片铺满整个页面 */
+    background-size: cover;
+    /* 背景图片居中 */
+    background-position: center;
+    /* 字体设置 */
+    font-family: 微软雅黑;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+/* 设置表单盒子的样式 */
+form {
+    /* 设置表单盒子的背景颜色和透明度
+    rgba(参数1，参数2，参数3，参数4)中，前
+    三个参数设置rgb颜色，第四个参数设置透明度 */
+    background-color: rgba(27, 27, 50, 0.8);
+    /* background-color: #B45B3E; */
+    /* 设置盒子的宽度，盒子的高度取决于文本内容  */
+    width: 50%;
+    /* 指定最大宽度和最小宽度 */
+    max-width: 550px;
+    min-width: 300px;
+    /* 设置表单盒子内边距 */
+    padding: 2em;
+    /* 盒子居中 */
+    margin: auto;
+}
+
+/* 设置标题样式 */
+h1 {
+    /* 居中 */
+    text-align: center;
+    /* 颜色 */
+    /* color: white; */
+    /* 设置文字粗细 */
+    font-weight: 550;
+}
+
+/* 副标题居中 */
+.fubiaoti {
+    /* 居中 */
+    text-align: center;
+    /* 斜体 */
+    font-style: italic;
+    /* 颜色 */
+    color: white;
+    /* 设置副标题与表单盒子的间距 */
+    margin-bottom: 40px;
+}
+
+
+
+/* 设置提示文字与输入框的距离 */
+.interval {
+    margin-bottom: 0.8em;
+}
+
+/* 设置链接文字样式 */
+a {
+    text-decoration: none;
+    color: burlywood;
+}
+
+/* 统一表单元素的样式 */
+.samestyle {
+    width: 100%;
+    border-radius: 3px;
+}
+
+/* 设置文本域样式 */
+textarea {
+
+
+    /* 宽度和高度的设置 */
+    width: 100%;
+    min-height: 100px;
+    border-radius: 3px;
+
+}
+
+
+/* 样式星星的容器 */
+.rating {
+    display: inline-block;
+    font-size: 0;
+}
+
+/* 星星的外框，黄色 */
+/* .rating input 用了复合选择器中的 后代选择器 */
+.rating input {
+    display: none;
+}
+
+/* 星星的图标，灰色 */
+/* .rating label 用了复合选择器中的 后代选择器 */
+.rating label {
+    font-size: 35px;
+    color: #ccc;
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+
+}
+
+/* 星星的图标，黄色 */
+.rating label:before {
+    content: '\2605';
+    /* Unicode 黄色星星图标 */
+}
+
+/* 鼠标悬停在星星上时的样式，黄色 */
+.rating input:checked~label {
+    color: #f7d917;
+    /* 改变颜色为黄色 */
+}
+
+/* 禁用星星评分的样式，灰色 */
+.rating input:disabled~label {
+    cursor: default;
+    color: #ccc;
+}
+
+
+
+/* 选中的星星之后的星星设为空心并变为白色 */
+.rating input:checked~label~label:before {
+    /* content: '\2606'; */
+    /* Unicode 空心星星图标 */
+    color: #ccc;
+    /* 变为白色 */
+}
+
+/* 将所有星星设为黄色 */
+.rating label:before {
+    color: #f7d917;
+}
+
+/* 设置提交按钮样式 */
+.submit {
+
+    width: 50%;
+    display: block;
+    margin: auto;
+    /* 设置提交按钮的上边距 */
+    margin-top: 4.5em;
+    background-color: #37af65;
+}
+
+/* 鼠标悬停变小手 */
+.submit:hover {
+    cursor: pointer;
+}

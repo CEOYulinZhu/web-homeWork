@@ -1,0 +1,133 @@
+body {
+    font-family: 宋体;
+    /* 设置内边距 */
+    padding: 20px;
+
+}
+
+div {
+    /* 水平居中 */
+    width: 50%;
+    max-width: 1000px;
+    background-color: burlywood;
+    left: 250px;
+    /* 居中 */
+    margin: auto;
+    /* 设置内边距 */
+    padding: 20px;
+}
+
+hr {
+    height: 3px;
+    background-color: red;
+}
+
+h1 {
+    font-family: 黑体;
+    font-size: 40px;
+    text-align: center;
+}
+
+/* 设置斜体字 */
+.since {
+    text-align: center;
+    font-style: italic;
+    font-size: 25px;
+}
+
+h2 {
+    font-family: 黑体;
+    font-size: 35px;
+    text-align: center;
+}
+
+.caidan {
+    font-size: 28px;
+    /* 块转行内块 */
+    display: inline-block;
+    /* 水平向左对齐 */
+    text-align: left;
+    /* 设置内边距 */
+    padding: 30px;
+
+}
+
+.jiage {
+    font-size: 25px;
+    /* 块转行内块 */
+    display: inline-block;
+    /* 文字水平向右对齐 */
+    text-align: right;
+    /* 控制两个行内块的间距 */
+    margin-left: 400px;
+    /* 设置内边距 */
+    padding: 15px;
+
+}
+
+.caidan2 {
+    font-size: 28px;
+    /* 块转行内块 */
+    display: inline-block;
+    /* 水平向左对齐 */
+    text-align: left;
+    /* 设置内边距 */
+    padding: 30px;
+
+}
+
+.jiage2 {
+    font-size: 25px;
+    /* 块转行内块 */
+    display: inline-block;
+    /* 文字水平向右对齐 */
+    text-align: right;
+    /* 控制两个行内块的间距 */
+    margin-left: 456px;
+    /* 设置内边距 */
+    padding: 15px;
+
+}
+
+
+/* 图片居中 */
+.centered-image {
+
+    text-align: center;
+    /* display: flex;
+    justify-content: center; */
+    /* 调整图片与上边界的间距 */
+    margin-top: -25px;
+}
+
+.tiandian {
+    margin-bottom: 10px;
+}
+
+/* 脚页文字水平居中 */
+footer {
+    text-align: center;
+    font-size: 30px;
+
+    a:link {
+        color: black
+    }
+
+    ;
+
+    a:visited {
+        color: black
+    }
+
+    ;
+
+    a:hover {
+        color: brown
+    }
+
+    ;
+
+    a:active {
+        color: brown
+    }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>注册表单</h1>
+        <p class="fubiaoti">
+            请填写下面表单中所要求的信息
+        </p>
+    </header>
+    <main>
+        <form arction="#" method="get" name="register">
+
+
+            <!-- 姓名 -->
+            <p class="interval">
+                <label for="name">请输入你姓名：</label>
+            </p>
+
+
+            <input type="text" name="name" id="name" class="samestyle">
+            <br>
+            <!-- 邮箱 -->
+            <p class="interval">
+                <label for="e-mail">请输入你的邮箱：</label>
+            </p>
+
+            <input type="text" name="e-mail" id="e-mail" class="samestyle">
+            <br>
+            <!-- 密码 -->
+            <p class="interval">
+                <label for="password">创建你的密码：</label>
+            </p>
+
+            <input type="password" name="password" class="samestyle">
+            <br>
+
+            <!-- 账户类型 -->
+            <p>
+                <input type="radio" name="zhanghuleixing" id="gerenzhanghu"><label
+                    for="gerenzhanghu">&nbsp;&nbsp;个人账户</label>
+            </p>
+
+            <p>
+                <input type="radio" name="zhanghuleixing" id="qiyezhanghu"><label
+                    for="qiyezhanghu">&nbsp;&nbsp;企业账户</label>
+            </p>
+
+
+            <!-- 条款 -->
+            <p>
+                <input type="checkbox" name="tiaokuan">&nbsp;&nbsp;我接受此链接中的&nbsp;&nbsp;<a
+                    href="https:/z/gpnu.edu.cn/index/xxyw1/1033.htm" target="_blank">术语和条款</a>
+            </p>
+
+            <!-- 上传个人照片 -->
+            <p class="interval">
+                <label for="photo">上传个人照片:</label>
+            </p>
+            <input type="file" id="photo">
+            <br>
+
+            <!-- 年龄 -->
+            <p class="interval">
+                <label for="age">输入你的年龄：</label>
+            </p>
+            <input type="text" name="age" placeholder="Age" id="age" class="samestyle">
+            <br>
+
+            <!-- 途径 -->
+            <p class="interval">
+                <label for="tujing">你是从何种途径知悉我们的？</label>
+            </p>
+            <select name="tujing" id="tujing" class="samestyle">
+                <option>（请选择）</option>
+                <option>新闻</option>
+                <option>视频</option>Stop responding
+                <option>论坛</option>
+                <option>其它</option>
+            </select>
+            <br>
+
+            <!-- 对自己的描述 -->
+            <p class="interval">
+                <label for="jieshao">你对自己的简要描述</label>
+            </p>
+            <!-- textarea标签在使用placeholder时，，<textarea>标签之间不能换行，不能有空格
+            这样placeholder的作用才能生效 -->
+            <textarea id="jieshao" placeholder="简要介绍自己……"></textarea>
+
+
+            <br>
+
+            <!-- 技术评价 -->
+            <p>
+                你对自己的技术评价：
+            </p>
+            <!-- 星星评分容器 -->
+            <div class="rating">
+                <!-- 五个星星评分选项 -->
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1"></label>
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2"></label>
+                <input type=radio id="star3" name="rating" value="3" />
+                <label for="star3"></label>
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4"></label>
+                <input type="radio" id="star5" name="rating" value="5" />
+                <label for="star5"></label>
+            </div>
+            <br>
+            <input type="submit" class="submit">
+        </form>
+    </main>
+</body>
+
+</html>
